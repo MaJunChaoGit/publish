@@ -1,0 +1,111 @@
+
+.navigation-controls {
+    //.floating-vertical;
+    position: relative;
+    /* border: 1px solid rgba(255, 255, 255, 0.1); */
+    font-weight: 300;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(20,62,141,0.4);
+    border: 1.7px solid rgba(20,62,141,0.7);
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.navigation-control {
+    .clickable;
+    //border-bottom: @floating-element-border;
+    width:25px;
+    height:25px;
+    line-height:25px;
+    /* border-right: 1.7px solid rgba(20,62,141,0.7); */
+    margin-left: 1px;
+}
+
+.naviagation-control:active {
+  color: #FFF;
+}
+
+.navigation-control-last {
+    .navigation-control;
+    //border-bottom: 0;
+    width:25px;
+    height:25px;
+    line-height:25px;
+    border-right: 0;
+}
+
+.navigation-control-icon-zoom-in {
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    color: @floating-text-color;
+}
+
+.navigation-control-icon-zoom-out {
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    color: @floating-text-color;
+}
+
+.navigation-control-icon-reset {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    fill: fade(@floating-text-color, 80%);
+    box-sizing: border-box;
+    margin: 0 auto;
+    top: 30%;
+}
+
+
+@compass-diameter: 96px;
+@compass-ring-width: @compass-diameter * 20 / 145;
+@compass-gyro-diameter: @compass-diameter * 50 / 145;
+
+.compass {
+    position: relative;
+    width: @compass-diameter;
+    height: @compass-diameter;
+    overflow: hidden;
+}
+
+.compass-outer-ring {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background: url(./outerRing.png) 0 0 no-repeat;
+}
+
+
+.compass-gyro {
+    pointer-events: none;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    fill: #CCC;
+}
+
+
+.compass-rotation-marker {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    fill: white;
+    background: url(./clickIcon.png) 0 0 no-repeat;
+    z-index:999;
+}
+
+@media screen and (max-width: 700px) {
+    .compass {
+        display: none;
+    }
+}
